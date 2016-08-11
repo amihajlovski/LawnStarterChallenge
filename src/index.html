@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="ngBoilerplate">
+<head>
+    <title ng-bind="pageTitle"></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>"/>
+    <% }); %>
+
+    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script>
+    <% }); %>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header full-width">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="login-center-positioning" href="">
+                    <button type="submit" class="btn btn-default">Sign in</button>
+                </a></li>
+            </ul>
+            <a class="navbar-brand black" href="">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container" ui-view="main"></div>
+
+
+</body>
+</html>

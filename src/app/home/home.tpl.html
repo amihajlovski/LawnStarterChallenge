@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="center">
+    <div class="application-form">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">&#9977;</span>
+        <input ng-model="user.name" type="text" class="form-control" placeholder="Your name" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">@</span>
+        <input ng-model="user.email" type="text" class="form-control" placeholder="Your email" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+        <input ng-model="user.comment" type="text" class="form-control message" placeholder="Your comment" aria-describedby="basic-addon1">
+      </div>
+      <div class="next-button">
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-primary" ng-disabled="!isFormValid()" ng-click="submitForm()">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
