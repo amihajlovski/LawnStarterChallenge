@@ -74,6 +74,13 @@ h2 {
   }
 }
 
+.resize-off{
+  resize: none;
+}
+
+.position-pen {
+  top: -20px !important;
+}
 
 .header-main {
   height: 50px;
@@ -193,6 +200,19 @@ body {
   }
 }
 
+@media only screen and (max-width: 800px) {
+  .navbar-right {
+    float: right;
+    margin: 0;
+  }
+  .container {
+    .center {
+      .application-form {
+        width: 100%;
+      }
+    }
+  }
+}
 
 /**
  * Now that all app-wide styles have been applied, we can load the styles for
