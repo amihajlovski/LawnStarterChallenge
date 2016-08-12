@@ -4,8 +4,8 @@ npm install -g grunt
 bower install
 npm install
 
-Or, just start index.html from the build folder :)
 Just as a notice, requestb.in hasn't allowed CORS so I was testing the app on Chrome with disabled web security flag.
+requestb.in url: http://requestb.in/1n4nrul1?inspect
 
 Before starting the app, run "grunt build" from terminal and the run the generated index.html from the build folder.
 
