@@ -1,25 +1,35 @@
-angular.module( 'ngBoilerplate', [
-  'templates-app',
-  'templates-common',
-  'ngBoilerplate.home',
-  'ngBoilerplate.about',
-  'ui.router'
+angular.module('ngBoilerplate', [
+    'templates-app',
+    'templates-common',
+    'ngBoilerplate.home',
+    'ngBoilerplate.about',
+    'ui.router'
 ])
 
-.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
-  $urlRouterProvider.otherwise( '/home' );
-})
+    .config(function myAppConfig($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/name');
+    })
 
-.run( function run () {
-})
+    .run(function run($rootScope, $timeout, ENTER_KEY_CODE) {
 
-.controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
-  $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-    if ( angular.isDefined( toState.data.pageTitle ) ) {
-      $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
-    }
-  });
-})
+        var handleKeyboardEnterButton = function (keyCode) {
+            if (keyCode && keyCode === ENTER_KEY_CODE) {
+                $timeout(function () {
+                    angular.element(document.getElementById('next')).triggerHandler('click');
+                }, 0);
+            }
+        };
 
-;
+        var bindEvents = function () {
+            $rootScope.$on('$stateChangeStart', function (e, toState, toParams, fromState, fromParams) {
+                $rootScope.prevPage = fromState.name;
+                $rootScope.currentPage = toState.name;
+            });
+            document.addEventListener('keydown', function (event) {
+                handleKeyboardEnterButton(event.keyCode);
+            });
+        };
 
+        bindEvents();
+
+    });

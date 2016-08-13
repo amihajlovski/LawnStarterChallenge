@@ -5,17 +5,9 @@
         <span class="input-group-addon" id="basic-addon1">&#9977;</span>
         <input ng-model="user.name" type="text" class="form-control" placeholder="Your name" aria-describedby="basic-addon1">
       </div>
-      <div class="input-group">
-        <span class="input-group-addon">@</span>
-        <input ng-model="user.email" type="text" class="form-control" placeholder="Your email" aria-describedby="basic-addon1">
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon"><span class="glyphicon glyphicon-pencil position-pen"></span></span>
-        <textarea ng-model="user.comment" type="text" class="form-control message resize-off" placeholder="Your comment" aria-describedby="basic-addon1"></textarea>
-      </div>
-      <div class="next-button">
-        <div class="btn-group" role="group" aria-label="...">
-          <button type="button" class="btn btn-primary" ng-disabled="!isFormValid()" ng-click="submitForm()">Next</button>
+      <div class="buttons">
+        <div class="btn-group next" role="group" aria-label="...">
+          <button id="next" type="button" class="btn btn-primary" ng-disabled="!isInputValid('name')" ng-click="goTo('email')">Next</button>
         </div>
       </div>
     </div>

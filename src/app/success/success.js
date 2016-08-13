@@ -11,8 +11,8 @@ angular.module( 'ngBoilerplate.about', [
             url: '/success',
             views: {
                 "main": {
-                    controller: 'SuccessCtrl',
-                    templateUrl: 'about/about.tpl.html'
+                    controller: 'HomeCtrl',
+                    templateUrl: 'success/success.tpl.html'
                 }
             },
             data:{ pageTitle: 'Success' }
@@ -21,7 +21,7 @@ angular.module( 'ngBoilerplate.about', [
 
     .controller( 'SuccessCtrl', function AboutCtrl($scope, $state, UserFactory) {
         $scope.redirect = function () {
-            $state.go('home');
+            $state.go('comment');
         };
 
         var init = function () {

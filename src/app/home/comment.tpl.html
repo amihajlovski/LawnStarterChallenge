@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="center">
+        <div class="application-form">
+            <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-pencil position-pen"></span></span>
+            <textarea ng-model="user.comment" type="text" class="form-control message resize-off" placeholder="Your comment" aria-describedby="basic-addon1"></textarea>
+            </div>
+            <div class="buttons">
+                <div class="btn-group next" role="group" aria-label="...">
+                    <button id="next" type="button" class="btn btn-primary" ng-disabled="!isInputValid('comment')" ng-click="goTo('success')">Next</button>
+                </div>
+                <div class="btn-group back" role="group" aria-label="...">
+                    <button type="button" class="btn btn-success" ng-click="goTo('email', true)">Back</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

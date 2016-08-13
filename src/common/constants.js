@@ -6,5 +6,6 @@
     'use strict';
 
     angular.module('ngBoilerplate')
-        .constant('API_URL', 'http://requestb.in/1n4nrul1');
+        .constant('API_URL', 'http://requestb.in/1n4nrul1')
+        .constant('ENTER_KEY_CODE', 13);
 }());
