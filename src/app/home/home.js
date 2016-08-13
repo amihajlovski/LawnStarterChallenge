@@ -59,12 +59,15 @@ angular.module('ngBoilerplate.home', [
             return false;
         };
 
-        $scope.goTo = function (url, isBack) {
-            if(!isBack && typeof isBack !== 'undefined' && $scope.isInputValid($rootScope.currentPage)){
-                return;
-            }
-            if (url) {
+        $scope.goToNextPage = function (url) {
+            if (url && $scope.isInputValid($rootScope.currentPage)) {
                 UserFactory.saveUserInMemory($scope.user);
+                $state.go(url);
+            }
+        };
+
+        $scope.goBack = function (url) {
+            if(url){
                 $state.go(url);
             }
         };
