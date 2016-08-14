@@ -14,5 +14,7 @@
     "angular-bootstrap": "^2.0.1",
     "bootstrap-sass": "latest"
   },
-  "dependencies": {}
+  "dependencies": {
+    "AngularJS-Toaster": "angularjs-toaster#^2.0.0"
+  }
 }

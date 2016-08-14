@@ -25,7 +25,7 @@ angular.module('ngBoilerplate')
           return typeof comment !== 'undefined' && comment.length > 0;
       };
 
-      factory.saveUserInMemory = function (user) {
+      factory.setUser = function (user) {
           factory.user = user;
       };
 

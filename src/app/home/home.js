@@ -37,10 +37,13 @@ angular.module('ngBoilerplate.home', [
     /**
      * And of course we define a controller for our route.
      */
-    .controller('HomeCtrl', function HomeController($scope, UserFactory, $state, $rootScope) {
+    .controller('HomeCtrl', function HomeController($scope, UserFactory, $state, $rootScope, toaster) {
 
         var successCallback = function () {
-            $state.go('success');
+            var emptyUser = {};
+            toaster.pop('success', "", "User saved!");
+            UserFactory.setUser(emptyUser);
+            $state.go('name');
         };
 
         var failCallback = function () {
@@ -61,7 +64,7 @@ angular.module('ngBoilerplate.home', [
 
         $scope.goToNextPage = function (url) {
             if (url && $scope.isInputValid($rootScope.currentPage)) {
-                UserFactory.saveUserInMemory($scope.user);
+                UserFactory.setUser($scope.user);
                 $state.go(url);
             }
         };
